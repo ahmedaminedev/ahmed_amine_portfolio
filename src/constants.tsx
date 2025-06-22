@@ -85,7 +85,7 @@ export const PROFILE_DATA: ProfileData = {
     fr: "Ingénieur FullStack passionné, spécialisé dans la création d'applications web innovantes et dynamiques. Prêt à relever de nouveaux défis et à transformer vos idées en réalité.",
     en: "[EN] Passionate FullStack Engineer, specializing in creating innovative and dynamic web applications. Ready to take on new challenges and turn your ideas into reality."
   },
-  profileImageUrl: "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmVzc2lvbmFsJTIwbWFufGVufDB8fDB8fHww&auto=format&fit=crop&w=400&h=400&q=80",
+  profileImageUrl: "images/ahmed.jpeg",
   socials: [
     { name: 'LinkedIn', url: CONTACT_INFO.linkedinUrl, icon: LinkedInIcon },
     { name: 'GitHub', url: 'https://github.com/ahmedaminedev', icon: GitHubIconConst },

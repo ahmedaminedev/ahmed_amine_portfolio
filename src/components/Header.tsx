@@ -289,30 +289,58 @@ export const Header: React.FC<HeaderProps> = ({ profile, navItems, language, set
               </div>
             )}
           </div>
-          <div
-            ref={heroImageContainerRef}
-            className="md:w-2/5 flex justify-center items-center mt-8 md:mt-0 interactive-hero-image"
-            style={{ transformStyle: 'preserve-3d' } as React.CSSProperties}
-          >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <svg className="absolute inset-0 w-full h-full filter drop-shadow-[0_0_25px_rgba(var(--color-primary-rgb),0.7)]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <clipPath id="hexagonClip"><polygon points="50,0 93.3,25 93.3,75 50,100 6.7,75 6.7,25" /></clipPath>
-                  <linearGradient id="hexagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor: 'rgb(var(--color-primary-rgb))', stopOpacity: 0.8}} />
-                    <stop offset="100%" style={{stopColor: 'rgb(var(--color-primary-dark-rgb))', stopOpacity: 0.6}} />
-                  </linearGradient>
-                </defs>
-                <polygon points="50,0 93.3,25 93.3,75 50,100 6.7,75 6.7,25" fill="url(#hexagonGradient)"/>
-              </svg>
-              <img
-                src={profile.profileImageUrl || "https://via.placeholder.com/400?text=Profile"}
-                alt={profile.name}
-                className="relative w-full h-full object-cover"
-                style={{ clipPath: 'url(#hexagonClip)'}}
-              />
-            </div>
-          </div>
+<div
+  ref={heroImageContainerRef}
+  className="relative md:w-2/5 flex justify-center items-center mt-8 md:mt-0 interactive-hero-image"
+  style={{ transformStyle: 'preserve-3d' } as React.CSSProperties}
+>
+  {/* Grand hexagone (fond) */}
+  <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+    <svg
+      className="w-full h-full drop-shadow-[0_0_25px_rgba(var(--color-primary-rgb),0.7)]"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <clipPath id="hexagonClip">
+          <polygon points="50,0 93.3,25 93.3,75 50,100 6.7,75 6.7,25" />
+        </clipPath>
+        <linearGradient id="hexagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: 'rgb(var(--color-primary-rgb))', stopOpacity: 0.8 }} />
+          <stop offset="100%" style={{ stopColor: 'rgb(var(--color-primary-dark-rgb))', stopOpacity: 0.6 }} />
+        </linearGradient>
+      </defs>
+      <polygon
+        points="50,0 93.3,25 93.3,75 50,100 6.7,75 6.7,25"
+        fill="url(#hexagonGradient)"
+      />
+    </svg>
+  </div>
+
+{/* Petit hexagone avec image, positionné au centre du grand hexagone */}
+<div className="absolute w-80 h-80 sm:w-82 sm:h-82 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+  <svg
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-full"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <clipPath id="smallHexClip">
+        <polygon points="50,0 93.3,25 93.3,75 50,100 6.7,75 6.7,25" />
+      </clipPath>
+    </defs>
+    <image
+      href={`${process.env.PUBLIC_URL}/${profile.profileImageUrl}`}
+      width="100%"
+      height="100%"
+      preserveAspectRatio="xMidYMid slice"
+      clipPath="url(#smallHexClip)"
+    />
+  </svg>
+</div>
+</div>
+
         </div>
       </section>
     </>
