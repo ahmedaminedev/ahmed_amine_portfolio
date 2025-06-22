@@ -41,6 +41,12 @@ const App: React.FC = () => {
         <div className="animate-fade-in-slide-up">
             <AboutSection id="about" profile={PROFILE_DATA} language={language} title={getLabel(UI_LABELS.aboutMeTitle)} />
         </div>
+        <div className="animate-fade-in-slide-up delay-400">
+          <EducationSection id="education" educationItems={EDUCATION_DATA} language={language} title={getLabel(UI_LABELS.educationTitle)} />
+        </div>
+
+
+
         <div className="animate-fade-in-slide-up delay-100">
             <SkillsSection id="skills" skillsCategories={SKILLS_DATA} language={language} title={getLabel(UI_LABELS.skillsTitle)} />
         </div>
@@ -58,9 +64,7 @@ const App: React.FC = () => {
             freelanceSubtitle={getLabel(UI_LABELS.freelanceProjectsSubtitle)}
           />
         </div>
-        <div className="animate-fade-in-slide-up delay-400">
-          <EducationSection id="education" educationItems={EDUCATION_DATA} language={language} title={getLabel(UI_LABELS.educationTitle)} />
-        </div>
+
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 animate-fade-in-slide-up delay-500">
           <LanguagesSection languages={LANGUAGES_DATA} language={language} title={getLabel(UI_LABELS.languagesTitle)} />
