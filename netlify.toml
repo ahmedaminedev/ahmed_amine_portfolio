@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"  # Commande pour builder le projet
+  publish = "build"         # Dossier à déployer (généré par React)
+
+[[redirects]]
+  from = "/*"               # Capture toutes les URLs
+  to = "/index.html"        # Redirige vers index.html
+  status = 200              # Code HTTP "OK" (évite les 404)
