@@ -18,11 +18,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, language }) => {
   return (
     <Card className="flex flex-col h-full transform transition-all duration-300 focus-within:ring-2 focus-within:ring-primary" interactive={true}>
       <img 
-        src={project.imageUrl || `https://via.placeholder.com/400x300.png/1F2937/F3F4F6?text=${project.title[language].replace(/\s/g, '+')}`} 
+src={`${process.env.PUBLIC_URL}${project.imageUrl}`}
         alt={project.title[language]} 
         className="w-full h-48 object-cover rounded-t-md mb-4"
         loading="lazy"
       />
+
       <div className="flex-grow p-1">
         <h3 className="text-xl font-semibold text-primary mb-1">{project.title[language]}</h3>
         {project.period && <p className="text-xs text-text-light mb-2">{project.period}</p>}
