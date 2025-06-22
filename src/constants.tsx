@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileData, ContactInfo, EducationItem, ExperienceItem, ProjectItem, SkillCategory, LanguageItem, AssociationItem, NavItem, SocialLink, CVLink, LocalizedString } from './types';
+import { ProfileData, ContactInfo, EducationItem, ExperienceItem, ProjectItem, SkillCategory, LanguageItem, AssociationItem, NavItem, LocalizedString } from './types';
 
 // Icon components remain the same
 
