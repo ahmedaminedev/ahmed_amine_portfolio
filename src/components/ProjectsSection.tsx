@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, language }) => {
   return (
     <Card className="flex flex-col h-full transform transition-all duration-300 focus-within:ring-2 focus-within:ring-primary" interactive={true}>
       <img 
-src={`${process.env.PUBLIC_URL}${project.imageUrl}`}
+src={`/uploads/${project.imageUrl}`}
         alt={project.title[language]} 
         className="w-full h-48 object-cover rounded-t-md mb-4"
         loading="lazy"
